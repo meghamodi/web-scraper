@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# urlib2 module is imported
 import urllib2
+# BeautifulSoup is used for web scraping pages
 from bs4 import BeautifulSoup
+#csv(comma separated values) used for spreadsheets,etc
 import csv
 from datetime import datetime
 
@@ -9,6 +12,7 @@ quote_page = [‘http://www.bloomberg.com/quote/SPX:IND', ‘https://www.bloombe
 data =[]
 for pg in quote_page:
 	page =urllib2.urlopen(pg)
+	# html.parser for parsing text files formatted in html
 	soup = BeautifulSoup(page, 'html.parser')
 
 # strip() is used to remove starting and trailing
